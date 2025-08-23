@@ -1,0 +1,195 @@
+:root {
+  --uranian-blue: #a0ddff;
+  --vista-blue: #758ecd;
+  --periwinkle: #c1cefe;
+  --cornflower-blue: #7189ff;
+  --royal-purple: #624cab;
+  --tx-color: var(--royal-purple);
+  --bg-color: var(--periwinkle);
+  --gradient-border: linear-gradient(135deg, var(--vista-blue), var(--cornflower-blue));
+  --translate-px: 50px;
+  --transition-time: 0.5s;
+  --shadow-color: rgba(98, 76, 171, 0.3);
+}
+
+/* Body - subtle gradient + smooth font rendering */
+body {
+  background: linear-gradient(135deg, var(--periwinkle), #d3d9ff);
+  color: var(--tx-color);
+  font-family: "Mozilla Headline", sans-serif;
+  font-weight: 900;
+  font-variation-settings: "wdth" 100;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main container grid with responsive columns */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Article cards - modern look */
+article {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px var(--shadow-color);
+  padding: 1.5rem;
+  transition: 
+    transform var(--transition-time) ease,
+    box-shadow var(--transition-time) ease,
+    border var(--transition-time) ease;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  will-change: transform, box-shadow;
+}
+
+/* On hover, lift the card and add stronger shadow + border gradient */
+article:hover:not(.bienvenida) {
+  transform: translateX(var(--translate-px)) scale(1.05);
+  box-shadow: 0 20px 40px rgba(98, 76, 171, 0.5);
+  border: 3px solid transparent;
+  border-image: var(--gradient-border) 1;
+  border-style: solid;
+  cursor: pointer;
+}
+
+/* Special welcome article */
+.bienvenida {
+  padding: 6rem 3rem;
+  text-align: center;
+  background: var(--cornflower-blue);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(113, 137, 255, 0.7);
+  user-select: none;
+  font-size: 1.5rem;
+}
+
+/* Welcome header spacing */
+.bienvenida h2 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+/* Header inside article */
+article > header {
+  margin-bottom: 1rem;
+}
+
+/* Article titles */
+article h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--royal-purple);
+  text-shadow: 1px 1px 2px rgba(98, 76, 171, 0.2);
+}
+
+/* Paragraph layout */
+article p {
+  margin: 0.5rem 0 1rem;
+  line-height: 1.5;
+  color: #444;
+  font-weight: 500;
+}
+
+/* Image styles - responsive & rounded */
+article img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(98, 76, 171, 0.15);
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease;
+  will-change: transform;
+  cursor: pointer;
+}
+
+/* Slight zoom on image hover */
+article img:hover {
+  transform: scale(1.08);
+}
+
+/* Styling for images with the 'que-buen-servicio' class */
+.que-buen-servicio {
+  width: 150px;
+  transition: transform var(--transition-time) ease-out;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(98, 76, 171, 0.2);
+  cursor: pointer;
+}
+
+.que-buen-servicio:hover {
+  transform: scale(1.8) translateY(48px);
+  box-shadow: 0 12px 32px rgba(98, 76, 171, 0.5);
+}
+
+/* Footer in article - published date styling */
+article footer p {
+  font-size: 0.85rem;
+  color: var(--vista-blue);
+  font-style: italic;
+  text-align: right;
+  margin-top: auto;
+}
+
+/* Small text helper class */
+.letra-pequeña {
+  font-size: 0.6rem;
+  color: #999;
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+  article {
+    padding: 1rem;
+  }
+  .bienvenida {
+    padding: 4rem 1.5rem;
+    font-size: 1.2rem;
+  }
+  .bienvenida h2 {
+    font-size: 2rem;
+  }
+  article h2 {
+    font-size: 1.4rem;
+  }
+  article img {
+    max-width: 100%;
+  }
+}
+
+
+@keyframes color-change {
+    0% {
+      color: var(--cornflower-blue);
+    }
+  
+    50% {
+      color: var(--royal-purple);
+    }
+  
+    100% {
+      color: var(--cornflower-blue);
+    }
+}
+
+h1:hover {
+    animation: color-change 3s infinite;
+}

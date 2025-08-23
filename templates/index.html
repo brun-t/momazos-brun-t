@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>BrunNews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Ultimas noticias</h1>
+    </header>
+
+    <main id="news-container">
+      <!-- Articles will be injected here by JavaScript -->
+    </main>
+
+    <script
+      type="module"
+      src="{{ url_for('static', filename='index.js') }}"
+    ></script>
+  </body>
+</html>
