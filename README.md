@@ -1,7 +1,7 @@
 Es una pagina de flask así que pues la tienes que correr tu :)
 
 Videito:
-![OH MY GAH](screenshoot.gif)
+![OH MY GAH](screenshot.gif)
 
 como hacerlo?
 
