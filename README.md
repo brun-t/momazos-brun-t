@@ -1,4 +1,7 @@
-Es una pagina de flask asi que pues la tienes que correr tu :)
+Es una pagina de flask así que pues la tienes que correr tu :)
+
+Videito:
+![OH MY GAH](screenshoot.gif)
 
 como hacerlo?
 
