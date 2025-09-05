@@ -19,6 +19,13 @@
       <h1>Ultimas noticias</h1>
     </header>
 
+    <div class="eye-container" id="eye" title="¡¡¡¡¡&&&#[)LiB3rT0D(]!\\\\!!¡¡¡¡">
+      <svg viewBox="0 0 100 100" class="eye-svg">
+        <circle cx="50" cy="50" r="45" stroke="black" stroke-width="4" fill="white" />
+        <circle id="pupil" cx="50" cy="50" r="10" fill="black" />
+      </svg>
+    </div>
+
     <main id="news-container">
       <!-- Articles will be injected here by JavaScript -->
     </main>
@@ -27,5 +34,32 @@
       type="module"
       src="{{ url_for('static', filename='index.js') }}"
     ></script>
+    <script>
+    const eye = document.getElementById('eye');
+    const pupil = document.getElementById('pupil');
+
+    document.addEventListener('mousemove', (e) => {
+      const rect = eye.getBoundingClientRect();
+      const eyeCenterX = rect.left + rect.width / 2;
+      const eyeCenterY = rect.top + rect.height / 2;
+
+      const dx = e.clientX - eyeCenterX;
+      const dy = e.clientY - eyeCenterY;
+
+      const angle = Math.atan2(dy, dx);
+      const radius = 10; // max movement radius inside SVG eye
+
+      const pupilX = 50 + Math.cos(angle) * radius;
+      const pupilY = 50 + Math.sin(angle) * radius;
+
+      pupil.setAttribute('cx', pupilX);
+      pupil.setAttribute('cy', pupilY);
+    });
+
+    eye.addEventListener('click', () => {
+      window.location.href = '/noabrir';
+    });
+</script>
+
   </body>
 </html>

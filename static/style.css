@@ -193,3 +193,27 @@ article footer p {
 h1:hover {
     animation: color-change 3s infinite;
 }
+
+.eye-container {
+  position: sticky;
+  top: 1rem;
+  right: 1rem;
+  width: 20px;
+  height: 20px;
+  z-index: 999;
+  float: right;
+  margin-left: auto;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.eye-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.eye-container:hover {
+  filter: drop-shadow(0 0 8px rgba(98, 76, 171, 0.7));
+}
+
