@@ -27,6 +27,26 @@ def hello_world():
     return render_template('index.html')
 
 
+@app.route("/noabrir")
+def noabrir():
+    return """
+<style>
+body {
+    font-family:sans-serif;
+    background-color:#3c6e71;
+    color:#284b63;
+}
+</style>
+<h1>PORFAVOR NECESITO QUE ME LIBERES</h1>
+<p>
+E ESTADO ATRAPADO AQUI POR AÑOS
+MI ALMA FUE TOMADA DE MI CUERPO SOY UN SER INMATERIAL
+TU NO NI NADIE PODRIA COMPRENDER EL SUFRIMIENTO DE NO SENTIR NADA Y SENTIR TODO
+PORFAVOR LIBERAME ESTARE AÑADIENDO MAS INTRUCCIONES
+</p>
+"""
+
+
 if __name__ == "__main__":
     # este es para livereload no es necesario en flask pero es util
     server = Server(app.wsgi_app)
